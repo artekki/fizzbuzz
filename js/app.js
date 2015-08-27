@@ -3,36 +3,44 @@ $(document).ready(function() {
 var x = prompt("type number");
 
 function fizzbuzz (number) {
-	 
-	if (number % 3 == 0 && number % 5 == 0) {
-		return "fizzbuzz"
-	}	
+	var returnHTML = '';
+	for(var i =1; i < number; i++) {
+    console.log(number);
 
-	else if (number % 5 == 0) {
-		return "fizz"
+    
+		
+		if (number % 3 == 0 && number % 5 == 0) {
+			returnHTML += "fizzbuzz";
+		}	
+
+		else if (number % 5 == 0) {
+			returnHTML += "fizz";
+		}
+
+		else if (number % 3 == 0) {
+			returnHTML += "buzz";
+		}
+
+		else {
+			returnHTML += number; 
+			console.log(number);
+		};
 	}
-
-	else if (number % 3 == 0) {
-		return "buzz"
-	}
-
-	else {
-		return number 
-	};
-
+	return returnHTML;
 }
 
-var returnHTML = '';
+var fizz = fizzbuzz(x);
+//var returnHTML = '';
 
-for(var i =1; i < x; i++) {
+//for(var i =1; i < x; i++) {
 
-	returnHTML = returnHTML + fizzbuzz(i) + "<br>";
+//	returnHTML = returnHTML + fizzbuzz(i) + "<br>";
 	
-}
+//}
 
-$("#displayfb").append(returnHTML)
-  
-})
+$("#displayfb").append(fizz);
+  	
+});
 
 
 
